@@ -18,6 +18,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 //        textView = (TextView) findViewById(R.id.textView1);
         WriteSettings(this, "123");
+		
+		//将A中的资源id放入SharedPreferences中存储
+        SharedPreferences sp = this.getSharedPreferences("sp", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sp.edit();
+        editor.putInt("Rkey", R.string.share_A);
+        editor.commit();
     }
 
 

@@ -30,6 +30,12 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "DealFile2 Settings read" + msg,
                     Toast.LENGTH_SHORT).show();
             WriteSettings(ctx, "deal file2 write");
+			
+			//获取A中SharedPreferences中的资源id，然后根据id找到该资源
+            SharedPreferences sp = ctx.getSharedPreferences("sp", MODE_PRIVATE);
+            int Rkey = sp.getInt("Rkey", 0);
+            String ts = ctx.getResources().getString(Rkey);
+            textView2.setText(ts);
         } catch (PackageManager.NameNotFoundException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
