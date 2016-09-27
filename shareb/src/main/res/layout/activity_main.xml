@@ -15,4 +15,17 @@
         android:text="Hello World!"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+		
+		 <TextView
+        android:layout_marginTop="20dp"
+        android:id="@+id/textView2"
+        android:text="Hello World!"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:layout_marginTop="20dp"
+        android:id="@+id/image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 </RelativeLayout>

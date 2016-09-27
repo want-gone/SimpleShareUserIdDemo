@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences sp = this.getSharedPreferences("sp", MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
         editor.putInt("Rkey", R.string.share_A);
+		editor.putInt("Ikey", R.drawable.oo);
         editor.commit();
     }
 

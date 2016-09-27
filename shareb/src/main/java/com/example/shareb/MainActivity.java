@@ -16,12 +16,16 @@ import java.io.OutputStreamWriter;
 public class MainActivity extends AppCompatActivity {
 
     TextView textView;
+	TextView textView2;
+    ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         textView = (TextView) this.findViewById(R.id.textView1);
+		textView2 = (TextView) this.findViewById(R.id.textView2);
+        imageView = (ImageView) findViewById(R.id.image);
 
         try {
             //获取程序A的context
@@ -36,6 +40,14 @@ public class MainActivity extends AppCompatActivity {
             int Rkey = sp.getInt("Rkey", 0);
             String ts = ctx.getResources().getString(Rkey);
             textView2.setText(ts);
+			Drawable image = ctx.getResources().getDrawable(Ikey);
+//            imageView.setImageDrawable(image);
+
+            //根据直接根据id找到资源
+            int drawableId = ctx.getResources().getIdentifier("timg", "drawable", "com.example.sharea");
+            Drawable image2 = ctx.getResources().getDrawable(drawableId);
+            imageView.setImageDrawable(image2);
+			
         } catch (PackageManager.NameNotFoundException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
